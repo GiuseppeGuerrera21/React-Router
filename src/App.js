@@ -3,23 +3,29 @@ import HomePage from "./pages/Home";
 import ProductsPage from "./pages/Products";
 import RoutLayout from "./pages/RoutLayout";
 import ErrorPage from "./pages/Error";
+import ProductsDetailPage from "./pages/ProductsDetail";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <RoutLayout />,
+      errorElement: <ErrorPage />,
       children: [
         {
-          path: "/",
+          path: '',
           element: <HomePage />,
         },
         {
-          path: "/products",
+          path: 'products',
           element: <ProductsPage />,
         },
+        {
+          path: 'products/:id',
+          element: <ProductsDetailPage />,
+        },
+
       ],
-      errorElement: <ErrorPage />,
     },
   ]);
 
