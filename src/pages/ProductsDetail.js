@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 
-export default function ProductsDetailPage(){
+export default function (){
     const params = useParams();
 
     return (
